@@ -250,6 +250,7 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="app\raptor\home\homeIndex.html" />
     <Content Include="Areas\HelpPage\HelpPage.css" />
     <Content Include="bower_components\angular-mocks\angular-mocks.js" />
     <Content Include="bower_components\angular-mocks\ngAnimateMock.js" />
@@ -386,11 +387,15 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <TypeScriptCompile Include="app\raptor\home\home.module.ts" />
+    <TypeScriptCompile Include="app\raptor\home\homeIndexController.ts" />
+    <TypeScriptCompile Include="app\raptor\raptor.routes.ts" />
     <TypeScriptCompile Include="app\raptor\raptor.module.ts" />
     <TypeScriptCompile Include="typings\angular\angular.d.ts" />
     <TypeScriptCompile Include="typings\jasmine\jasmine.d.ts" />
     <TypeScriptCompile Include="typings\jquery\jquery.d.ts" />
     <TypeScriptCompile Include="typings\angular\angular-mocks.d.ts" />
+    <TypeScriptCompile Include="typings\angular-ui-router\angular-ui-router.d.ts" />
     <TypeScriptCompile Include="typings\tsd.d.ts" />
   </ItemGroup>
   <ItemGroup>
