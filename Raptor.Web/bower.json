@@ -1,0 +1,25 @@
+{
+  "name": "Raptor",
+  "private": true,
+  "homepage": "https://github.com/voltaiaj/Raptor",
+  "authors": [
+    "Voltaiaj <Alexander.Voltaire@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-mocks": "^1.6.4",
+    "sinonjs": "^1.17.1",
+    "angular": "^1.6.4",
+    "angular-ui-router": "^0.4.2",
+    "jasmine-core": "^2.5.2"
+  }
+}
