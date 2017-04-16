@@ -7,11 +7,11 @@
         constructor($stateProvider: angular.ui.IStateProvider,
                     $urlRouteProvider: angular.ui.IUrlRouterProvider,
                     $locationProvider: angular.ILocationProvider) {
-            $urlRouteProvider.otherwise('/');
+            $urlRouteProvider.otherwise('/Home');
 
             $stateProvider.state('homeIndex',
                 {
-                    url: '/',
+                    url: '/Home',
                     templateUrl: 'app/raptor/home/homeIndex.html',
                     controller: 'homeIndexController as vm',
                     data: { pageTitle: 'Home'}
