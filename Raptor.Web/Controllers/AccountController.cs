@@ -6,7 +6,6 @@ using System.Security.Cryptography;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Http;
-using System.Web.Http.ModelBinding;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
@@ -31,23 +30,13 @@ namespace Raptor.Web.Controllers
         }
 
         public AccountController(ApplicationUserManager userManager,
-            ISecureDataFormat<AuthenticationTicket> accessTokenFormat)
+                                 ISecureDataFormat<AuthenticationTicket> accessTokenFormat)
         {
             UserManager = userManager;
             AccessTokenFormat = accessTokenFormat;
         }
 
-        public ApplicationUserManager UserManager
-        {
-            get
-            {
-                return _userManager ?? Request.GetOwinContext().GetUserManager<ApplicationUserManager>();
-            }
-            private set
-            {
-                _userManager = value;
-            }
-        }
+        public ApplicationUserManager UserManager { get { return _userManager ?? Request.GetOwinContext().GetUserManager<ApplicationUserManager>(); } private set { _userManager = value; } }
 
         public ISecureDataFormat<AuthenticationTicket> AccessTokenFormat { get; private set; }
 
@@ -59,11 +48,11 @@ namespace Raptor.Web.Controllers
             ExternalLoginData externalLogin = ExternalLoginData.FromIdentity(User.Identity as ClaimsIdentity);
 
             return new UserInfoViewModel
-            {
-                Email = User.Identity.GetUserName(),
-                HasRegistered = externalLogin == null,
-                LoginProvider = externalLogin != null ? externalLogin.LoginProvider : null
-            };
+                   {
+                       Email = User.Identity.GetUserName(),
+                       HasRegistered = externalLogin == null,
+                       LoginProvider = externalLogin != null ? externalLogin.LoginProvider : null
+                   };
         }
 
         // POST api/Account/Logout
@@ -90,28 +79,28 @@ namespace Raptor.Web.Controllers
             foreach (IdentityUserLogin linkedAccount in user.Logins)
             {
                 logins.Add(new UserLoginInfoViewModel
-                {
-                    LoginProvider = linkedAccount.LoginProvider,
-                    ProviderKey = linkedAccount.ProviderKey
-                });
+                           {
+                               LoginProvider = linkedAccount.LoginProvider,
+                               ProviderKey = linkedAccount.ProviderKey
+                           });
             }
 
             if (user.PasswordHash != null)
             {
                 logins.Add(new UserLoginInfoViewModel
-                {
-                    LoginProvider = LocalLoginProvider,
-                    ProviderKey = user.UserName,
-                });
+                           {
+                               LoginProvider = LocalLoginProvider,
+                               ProviderKey = user.UserName,
+                           });
             }
 
             return new ManageInfoViewModel
-            {
-                LocalLoginProvider = LocalLoginProvider,
-                Email = user.UserName,
-                Logins = logins,
-                ExternalLoginProviders = GetExternalLogins(returnUrl, generateState)
-            };
+                   {
+                       LocalLoginProvider = LocalLoginProvider,
+                       Email = user.UserName,
+                       Logins = logins,
+                       ExternalLoginProviders = GetExternalLogins(returnUrl, generateState)
+                   };
         }
 
         // POST api/Account/ChangePassword
@@ -124,8 +113,8 @@ namespace Raptor.Web.Controllers
             }
 
             IdentityResult result = await UserManager.ChangePasswordAsync(User.Identity.GetUserId(), model.OldPassword,
-                model.NewPassword);
-            
+                                                                          model.NewPassword);
+
             if (!result.Succeeded)
             {
                 return GetErrorResult(result);
@@ -166,9 +155,9 @@ namespace Raptor.Web.Controllers
 
             AuthenticationTicket ticket = AccessTokenFormat.Unprotect(model.ExternalAccessToken);
 
-            if (ticket == null || ticket.Identity == null || (ticket.Properties != null
-                && ticket.Properties.ExpiresUtc.HasValue
-                && ticket.Properties.ExpiresUtc.Value < DateTimeOffset.UtcNow))
+            if ((ticket == null) || (ticket.Identity == null) || ((ticket.Properties != null)
+                                                                  && ticket.Properties.ExpiresUtc.HasValue
+                                                                  && (ticket.Properties.ExpiresUtc.Value < DateTimeOffset.UtcNow)))
             {
                 return BadRequest("External login failure.");
             }
@@ -181,7 +170,7 @@ namespace Raptor.Web.Controllers
             }
 
             IdentityResult result = await UserManager.AddLoginAsync(User.Identity.GetUserId(),
-                new UserLoginInfo(externalData.LoginProvider, externalData.ProviderKey));
+                                                                    new UserLoginInfo(externalData.LoginProvider, externalData.ProviderKey));
 
             if (!result.Succeeded)
             {
@@ -209,7 +198,7 @@ namespace Raptor.Web.Controllers
             else
             {
                 result = await UserManager.RemoveLoginAsync(User.Identity.GetUserId(),
-                    new UserLoginInfo(model.LoginProvider, model.ProviderKey));
+                                                            new UserLoginInfo(model.LoginProvider, model.ProviderKey));
             }
 
             if (!result.Succeeded)
@@ -251,18 +240,18 @@ namespace Raptor.Web.Controllers
             }
 
             ApplicationUser user = await UserManager.FindAsync(new UserLoginInfo(externalLogin.LoginProvider,
-                externalLogin.ProviderKey));
+                                                                                 externalLogin.ProviderKey));
 
             bool hasRegistered = user != null;
 
             if (hasRegistered)
             {
                 Authentication.SignOut(DefaultAuthenticationTypes.ExternalCookie);
-                
-                 ClaimsIdentity oAuthIdentity = await user.GenerateUserIdentityAsync(UserManager,
-                    OAuthDefaults.AuthenticationType);
+
+                ClaimsIdentity oAuthIdentity = await user.GenerateUserIdentityAsync(UserManager,
+                                                                                    OAuthDefaults.AuthenticationType);
                 ClaimsIdentity cookieIdentity = await user.GenerateUserIdentityAsync(UserManager,
-                    CookieAuthenticationDefaults.AuthenticationType);
+                                                                                     CookieAuthenticationDefaults.AuthenticationType);
 
                 AuthenticationProperties properties = ApplicationOAuthProvider.CreateProperties(user.UserName);
                 Authentication.SignIn(properties, oAuthIdentity, cookieIdentity);
@@ -300,18 +289,18 @@ namespace Raptor.Web.Controllers
             foreach (AuthenticationDescription description in descriptions)
             {
                 ExternalLoginViewModel login = new ExternalLoginViewModel
-                {
-                    Name = description.Caption,
-                    Url = Url.Route("ExternalLogin", new
-                    {
-                        provider = description.AuthenticationType,
-                        response_type = "token",
-                        client_id = Startup.PublicClientId,
-                        redirect_uri = new Uri(Request.RequestUri, returnUrl).AbsoluteUri,
-                        state = state
-                    }),
-                    State = state
-                };
+                                               {
+                                                   Name = description.Caption,
+                                                   Url = Url.Route("ExternalLogin", new
+                                                                                    {
+                                                                                        provider = description.AuthenticationType,
+                                                                                        response_type = "token",
+                                                                                        client_id = Startup.PublicClientId,
+                                                                                        redirect_uri = new Uri(Request.RequestUri, returnUrl).AbsoluteUri,
+                                                                                        state = state
+                                                                                    }),
+                                                   State = state
+                                               };
                 logins.Add(login);
             }
 
@@ -368,14 +357,14 @@ namespace Raptor.Web.Controllers
             result = await UserManager.AddLoginAsync(user.Id, info.Login);
             if (!result.Succeeded)
             {
-                return GetErrorResult(result); 
+                return GetErrorResult(result);
             }
             return Ok();
         }
 
         protected override void Dispose(bool disposing)
         {
-            if (disposing && _userManager != null)
+            if (disposing && (_userManager != null))
             {
                 _userManager.Dispose();
                 _userManager = null;
@@ -386,10 +375,7 @@ namespace Raptor.Web.Controllers
 
         #region Helpers
 
-        private IAuthenticationManager Authentication
-        {
-            get { return Request.GetOwinContext().Authentication; }
-        }
+        private IAuthenticationManager Authentication { get { return Request.GetOwinContext().Authentication; } }
 
         private IHttpActionResult GetErrorResult(IdentityResult result)
         {
@@ -448,7 +434,7 @@ namespace Raptor.Web.Controllers
 
                 Claim providerKeyClaim = identity.FindFirst(ClaimTypes.NameIdentifier);
 
-                if (providerKeyClaim == null || String.IsNullOrEmpty(providerKeyClaim.Issuer)
+                if ((providerKeyClaim == null) || String.IsNullOrEmpty(providerKeyClaim.Issuer)
                     || String.IsNullOrEmpty(providerKeyClaim.Value))
                 {
                     return null;
@@ -460,11 +446,11 @@ namespace Raptor.Web.Controllers
                 }
 
                 return new ExternalLoginData
-                {
-                    LoginProvider = providerKeyClaim.Issuer,
-                    ProviderKey = providerKeyClaim.Value,
-                    UserName = identity.FindFirstValue(ClaimTypes.Name)
-                };
+                       {
+                           LoginProvider = providerKeyClaim.Issuer,
+                           ProviderKey = providerKeyClaim.Value,
+                           UserName = identity.FindFirstValue(ClaimTypes.Name)
+                       };
             }
         }
 
@@ -476,12 +462,12 @@ namespace Raptor.Web.Controllers
             {
                 const int bitsPerByte = 8;
 
-                if (strengthInBits % bitsPerByte != 0)
+                if (strengthInBits%bitsPerByte != 0)
                 {
                     throw new ArgumentException("strengthInBits must be evenly divisible by 8.", "strengthInBits");
                 }
 
-                int strengthInBytes = strengthInBits / bitsPerByte;
+                int strengthInBytes = strengthInBits/bitsPerByte;
 
                 byte[] data = new byte[strengthInBytes];
                 _random.GetBytes(data);
