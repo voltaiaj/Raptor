@@ -263,3 +263,4 @@ paket-files/
 /Raptor.Web/app/raptor/home/homeIndexController.js
 /Raptor.Web/app/raptor/home/home.module.js.map
 /Raptor.Web/app/raptor/home/home.module.js
+*.ncrunchproject

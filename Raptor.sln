@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Raptor.BusinessLogic", "Raptor.BusinessLogic\Raptor.BusinessLogic.csproj", "{42399ED4-2D20-4322-AF68-8F1FC4692A3A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Raptor.Business", "Raptor.BusinessLogic\Raptor.Business.csproj", "{42399ED4-2D20-4322-AF68-8F1FC4692A3A}"
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Raptor.Database", "Raptor.Database\Raptor.Database.sqlproj", "{B71EB2CE-E38E-4144-95D1-FBCF069C1437}"
 EndProject
@@ -13,7 +13,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Raptor.Web", "Raptor.Web\Ra
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Raptor.Web.Tests", "Raptor.Web.Tests\Raptor.Web.Tests.csproj", "{64F0CEAB-8C74-406B-AD48-8C2B2D28BAF1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Raptor.BusinessLogic.Tests", "Raptor.BusinessLogic.Tests\Raptor.BusinessLogic.Tests.csproj", "{174362F7-51D9-4A4D-B980-5770A7A3DA37}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Raptor.Business.Tests", "Raptor.BusinessLogic.Tests\Raptor.Business.Tests.csproj", "{174362F7-51D9-4A4D-B980-5770A7A3DA37}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

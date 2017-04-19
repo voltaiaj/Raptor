@@ -1,4 +1,5 @@
 ﻿using System.Data.Entity;
+using Raptor.Models.ContextConfiguration;
 using Raptor.Models.Models;
 
 namespace Raptor.Models
@@ -28,6 +29,8 @@ namespace Raptor.Models
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             Database.SetInitializer<RaptorContext>(null);
+            modelBuilder.Configurations.Add(new BarberLicenseeConfiguration());
+
             base.OnModelCreating(modelBuilder);
         }
     }
