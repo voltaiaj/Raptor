@@ -6,7 +6,7 @@ namespace Raptor.Models.Models
     {
         public int Id { get; set; }
         public int LicenseNumber { get; set; }
-        public DateTime ExirationDate { get; set; }
+        public DateTime ExpirationDate { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string City { get; set; }
