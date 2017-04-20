@@ -7,6 +7,7 @@ namespace Raptor.Models
     public interface IRaptorContext
     {
         IDbSet<BarberLicensee> BarberLicensees { get; set; }
+        IDbSet<StylistLicensee> StylistLicensees { get; set; }
     }
 
     public class RaptorContext : DbContext, IRaptorContext
@@ -25,11 +26,13 @@ namespace Raptor.Models
         }
 
         public IDbSet<BarberLicensee> BarberLicensees { get; set; }
+        public IDbSet<StylistLicensee> StylistLicensees { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             Database.SetInitializer<RaptorContext>(null);
             modelBuilder.Configurations.Add(new BarberLicenseeConfiguration());
+            modelBuilder.Configurations.Add(new StylistLicenseeConfiguration());
 
             base.OnModelCreating(modelBuilder);
         }

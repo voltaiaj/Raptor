@@ -50,7 +50,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ContextConfiguration\BarberLicenseeConfiguration.cs" />
+    <Compile Include="ContextConfiguration\StylistLicenseeConfiguration.cs" />
     <Compile Include="Models\BarberLicensee.cs" />
+    <Compile Include="Models\StylistLicensee.cs" />
     <Compile Include="RaptorContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
