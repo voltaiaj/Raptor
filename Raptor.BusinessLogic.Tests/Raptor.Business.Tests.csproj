@@ -58,6 +58,7 @@
     <Compile Include="Extensions\DbContextExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\BarberLicenseeDataServiceTests.cs" />
+    <Compile Include="Services\StylistLicenseeDataServiceTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -63,6 +63,7 @@
   <ItemGroup>
     <Build Include="Raptor\Tables\BarberLicensee.sql" />
     <Build Include="Raptor.sql" />
+    <Build Include="Raptor\Tables\StylistLicensee.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Raptor.Database.Local.publish.xml" />
