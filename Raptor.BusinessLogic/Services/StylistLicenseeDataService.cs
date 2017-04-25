@@ -14,14 +14,14 @@ namespace Raptor.BusinessLogic.Services
     {
         public StylistLicenseeDataService(IRaptorContext context)
         {
-            _Context = context;
+            this._Context = context;
         }
 
         public IRaptorContext _Context { get; set; }
 
         public IEnumerable<StylistLicensee> GetAllStylistLicensees()
         {
-            return _Context.StylistLicensees.ToList();
+            return this._Context.StylistLicensees.ToList();
         }
     }
 }

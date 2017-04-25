@@ -8,6 +8,7 @@ namespace Raptor.Models
     {
         IDbSet<BarberLicensee> BarberLicensees { get; set; }
         IDbSet<StylistLicensee> StylistLicensees { get; set; }
+        int SaveChanges();
     }
 
     public class RaptorContext : DbContext, IRaptorContext

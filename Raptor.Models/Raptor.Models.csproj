@@ -55,6 +55,7 @@
     <Compile Include="Models\StylistLicensee.cs" />
     <Compile Include="RaptorContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestHelpers\ContextPopulator.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
