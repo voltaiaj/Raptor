@@ -17,7 +17,7 @@ namespace Raptor.BusinessLogic.Services
             this._Context = context;
         }
 
-        public IRaptorContext _Context { get; set; }
+        private IRaptorContext _Context { get; set; }
 
         public IEnumerable<StylistLicensee> GetAllStylistLicensees()
         {
