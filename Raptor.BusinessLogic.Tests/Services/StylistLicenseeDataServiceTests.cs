@@ -39,15 +39,14 @@ namespace Raptor.BusinessLogic.Tests.Services
 
             context.RunWithRollback((ctx) =>
                                     {
-                                        var stylist1 = ContextPopulator.GetStylistLicensee(ctx);
-                                        var stylist2 = ContextPopulator.GetStylistLicensee(ctx);
+                                        var stylist = ContextPopulator.GetStylistLicensee(ctx);
 
                                         var sut = new StylistLicenseeDataService(ctx);
 
-                                        var actual = sut.GetById(stylist1.Id);
+                                        var actual = sut.GetById(stylist.Id);
 
                                         actual.ShouldNotBeNull();
-                                        actual.Id.ShouldEqual(stylist1.Id);
+                                        actual.Id.ShouldEqual(stylist.Id);
                                     });
         }
     }

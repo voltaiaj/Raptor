@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Linq.Expressions;
 
@@ -9,9 +10,9 @@ namespace Raptor.BusinessLogic.DataAccess
     public abstract class DataServiceBase<TEntity>
         where TEntity : class
     {
-        protected DataServiceBase()
+        protected DataServiceBase(IDbSet<TEntity> dbSet)
         {
-            this.Repository = new DbSetRepository<TEntity>();
+            this.Repository = new DbSetRepository<TEntity>(dbSet);
         }
 
         protected DbSetRepository<TEntity> Repository { get; private set; }

@@ -8,8 +8,9 @@ namespace Raptor.BusinessLogic.DataAccess
     public class DbSetRepository<TEntity>
         where TEntity : class
     {
-        public DbSetRepository()
+        public DbSetRepository(IDbSet<TEntity> dbSet)
         {
+            this.DbSet = dbSet;
         }
 
         protected IDbSet<TEntity> DbSet { get; set; }

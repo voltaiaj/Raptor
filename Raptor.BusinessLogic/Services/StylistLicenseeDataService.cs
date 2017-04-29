@@ -15,20 +15,18 @@ namespace Raptor.BusinessLogic.Services
     public class StylistLicenseeDataService : DataServiceBase<StylistLicensee>, IStylistLicenseeDataService
     {
         public StylistLicenseeDataService(IRaptorContext context)
+            :base(context.StylistLicensees)
         {
-            this._Context = context;
         }
-
-        private IRaptorContext _Context { get; set; }
 
         public IEnumerable<StylistLicensee> GetAllStylistLicensees()
         {
-            return this._Context.StylistLicensees.ToList();
+            return this.Find(x => x.Id > 0);
         }
 
         public StylistLicensee GetById(int id)
         {
-            return this._Context.StylistLicensees.SingleOrDefault(x => x.Id == id);
+            return this.SingleOrDefault(x => x.Id == id);
         }
     }
 }
