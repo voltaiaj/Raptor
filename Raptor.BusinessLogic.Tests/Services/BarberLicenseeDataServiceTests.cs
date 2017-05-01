@@ -30,5 +30,24 @@ namespace Raptor.BusinessLogic.Tests.Services
                                         actual.Count().ShouldBeGreaterThan(1);
                                     });
         }
+
+        [TestCategory("Integration")]
+        [TestMethod]
+        public void GetByIdHappyPathSubcutaneous()
+        {
+            var context = new RaptorContext();
+
+            context.RunWithRollback((ctx) =>
+                                    {
+                                        var barberLicensee = ContextPopulator.GetBarberLicensee(ctx);
+
+                                        var sut = new BarberLicenseeDataService(ctx);
+
+                                        var actual = sut.GetById(barberLicensee.Id);
+
+                                        actual.ShouldNotBeNull();
+                                        actual.Id.ShouldEqual(barberLicensee.Id);
+                                    });
+        }
     }
 }
