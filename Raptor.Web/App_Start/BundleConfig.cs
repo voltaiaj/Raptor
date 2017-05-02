@@ -20,6 +20,8 @@ namespace Raptor.Web
                             .Include("~/app/raptor/raptor.routes.js")
                             .Include("~/app/raptor/home/home.module.js")
                             .Include("~/app/raptor/home/homeIndexController.js")
+                            .Include("~/app/raptor/register/register.module.js")
+                            .Include("~/app/raptor/register/registerDetailsController.js")
             );
 
             // Use the development version of Modernizr to develop with and learn from. Then, when you're

@@ -250,6 +250,8 @@ paket-files/
 # JetBrains Rider
 .idea/
 *.sln.iml
+/Raptor.Web/app/raptor/*/*.js.map
+/Raptor.Web/app/raptor/*/*.module.js
 /Raptor.Web/app/raptor/*.js.map
 /Raptor.Web/app/raptor/*.module.js
 /Raptor.Web.Tests/Raptor.Web.Tests.v3.ncrunchproject

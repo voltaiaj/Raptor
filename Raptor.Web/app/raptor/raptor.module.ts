@@ -17,7 +17,8 @@
 
     angular.module('raptor', [
         'ui.router',
-        'raptor.home'
+        'raptor.home',
+        'raptor.register'
     ]);
 
     angular.module('raptor')

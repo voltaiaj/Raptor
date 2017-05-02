@@ -17,6 +17,14 @@
                     data: { pageTitle: 'Home'}
                 });
 
+            $stateProvider.state('register',
+                {
+                    url: '/Register',
+                    templateUrl: 'app/raptor/register/registerDetails.html',
+                    controller: 'registerDetailsController as vm',
+                    data: { pageTitle: 'Register' }
+                });
+
             $locationProvider.html5Mode(false);
         }
     }

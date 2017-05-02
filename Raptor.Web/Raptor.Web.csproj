@@ -267,6 +267,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="app\raptor\home\homeIndex.html" />
+    <Content Include="app\raptor\register\registerDetails.html" />
     <Content Include="Areas\HelpPage\HelpPage.css" />
     <Content Include="bower_components\angular-mocks\angular-mocks.js" />
     <Content Include="bower_components\angular-mocks\ngAnimateMock.js" />
@@ -407,6 +408,8 @@
     <TypeScriptCompile Include="app\raptor\home\homeIndexController.ts" />
     <TypeScriptCompile Include="app\raptor\raptor.routes.ts" />
     <TypeScriptCompile Include="app\raptor\raptor.module.ts" />
+    <TypeScriptCompile Include="app\raptor\register\register.module.ts" />
+    <TypeScriptCompile Include="app\raptor\register\registerDetailsController.ts" />
     <TypeScriptCompile Include="typings\angular\angular.d.ts" />
     <TypeScriptCompile Include="typings\jasmine\jasmine.d.ts" />
     <TypeScriptCompile Include="typings\jquery\jquery.d.ts" />
