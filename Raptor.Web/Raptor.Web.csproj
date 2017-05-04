@@ -410,6 +410,8 @@
     <TypeScriptCompile Include="app\raptor\raptor.module.ts" />
     <TypeScriptCompile Include="app\raptor\register\register.module.ts" />
     <TypeScriptCompile Include="app\raptor\register\registerDetailsController.ts" />
+    <TypeScriptCompile Include="app\utils\urlHelper.service.ts" />
+    <TypeScriptCompile Include="app\utils\utils.module.ts" />
     <TypeScriptCompile Include="typings\angular\angular.d.ts" />
     <TypeScriptCompile Include="typings\jasmine\jasmine.d.ts" />
     <TypeScriptCompile Include="typings\jquery\jquery.d.ts" />
