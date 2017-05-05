@@ -7,7 +7,7 @@
     export class RegisterDetailsController implements IRegisterDetailsController {
         public title: string;
         constructor() {
-            this.title = "Register Page"
+            this.title = "Register Page";
         }
     }
 

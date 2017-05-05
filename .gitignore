@@ -254,6 +254,7 @@ paket-files/
 /Raptor.Web/app/raptor/*/*.module.js
 /Raptor.Web/app/raptor/*.js.map
 /Raptor.Web/app/raptor/*.module.js
+/Raptor.Web/app/utils/*.js
 /Raptor.Web.Tests/Raptor.Web.Tests.v3.ncrunchproject
 /Raptor.Web/Raptor.Web.v3.ncrunchproject
 /Raptor.v3.ncrunchsolution
