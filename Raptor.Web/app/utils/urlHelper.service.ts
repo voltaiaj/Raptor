@@ -18,6 +18,6 @@
         }
     }
 
-    angular.module('rsis')
+    angular.module('utils')
         .service('urlHelper', UrlHelper);
 }

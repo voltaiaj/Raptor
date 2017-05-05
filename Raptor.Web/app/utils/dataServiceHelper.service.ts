@@ -19,4 +19,7 @@
 
 
     }
+
+    angular.module('utils')
+        .service('dataServiceHelper', DataServiceHelper);
 }

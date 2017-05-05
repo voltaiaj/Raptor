@@ -252,6 +252,7 @@ paket-files/
 *.sln.iml
 /Raptor.Web/app/raptor/*/*.js.map
 /Raptor.Web/app/raptor/*/*.module.js
+/Raptor.Web/app/raptor/*/*.js
 /Raptor.Web/app/raptor/*.js.map
 /Raptor.Web/app/raptor/*.module.js
 /Raptor.Web/app/utils/*.js
