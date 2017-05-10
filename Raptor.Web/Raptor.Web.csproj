@@ -413,6 +413,7 @@
     <TypeScriptCompile Include="app\utils\dataServiceHelper.service.ts" />
     <TypeScriptCompile Include="app\utils\urlHelper.service.ts" />
     <TypeScriptCompile Include="app\utils\utils.module.ts" />
+    <TypeScriptCompile Include="JSTests\utils\dataServiceHelper.service.spec.ts" />
     <TypeScriptCompile Include="typings\angular\angular.d.ts" />
     <TypeScriptCompile Include="typings\jasmine\jasmine.d.ts" />
     <TypeScriptCompile Include="typings\jquery\jquery.d.ts" />
