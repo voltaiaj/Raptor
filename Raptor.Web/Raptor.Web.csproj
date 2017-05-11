@@ -419,6 +419,7 @@
     <TypeScriptCompile Include="typings\jquery\jquery.d.ts" />
     <TypeScriptCompile Include="typings\angular\angular-mocks.d.ts" />
     <TypeScriptCompile Include="typings\angular-ui-router\angular-ui-router.d.ts" />
+    <TypeScriptCompile Include="typings\sinon\sinon.d.ts" />
     <TypeScriptCompile Include="typings\tsd.d.ts" />
   </ItemGroup>
   <ItemGroup>
