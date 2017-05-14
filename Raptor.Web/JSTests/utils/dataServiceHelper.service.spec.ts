@@ -220,7 +220,7 @@ describe('Utils dataServiceHelper', () => {
             expect(fulfilledCallbackSpy.calledOnce).toBe(true);
             expect(rejectedCallbackSpy.called).toBe(false);
 
-            response = fulfilledCallbackSpy.getCall(0).args[0];
+            response = fulfilledCallbackSpy.getCall(0).args[0];;
             expect(response.status).toBeDefined();
             expect(response.status).toBe(200);
             expect(response.data).toBeDefined();
