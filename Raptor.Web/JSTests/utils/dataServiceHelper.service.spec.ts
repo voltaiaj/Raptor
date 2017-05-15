@@ -301,4 +301,63 @@ describe('Utils dataServiceHelper', () => {
             expect(response.data).not.toEqual(expectedSuccessResponse);
         });
     });
+
+    describe('postWithParameters', () => {
+        let fulfilledCallbackSpy,
+            rejectedCallbackSpy,
+            response,
+            expectedUrl = 'myUrl/whichIsPostingData',
+            commandModel = { name: 'someName' },
+            expectedSuccessResponse = { id: 42 },
+            expectedErrorResponse = { ModelState: ['sever side validation error'] };
+
+        beforeEach(() => {
+            fulfilledCallbackSpy = sinon.spy();
+            rejectedCallbackSpy = sinon.spy();
+
+            actual = sut.postWithParameters('myUrl/whichIsPostingData', commandModel)
+                .then(fulfilledCallbackSpy, rejectedCallbackSpy);
+        });
+
+        afterEach(() => {
+            $httpBackend.verifyNoOutstandingRequest();
+            $httpBackend.verifyNoOutstandingExpectation();
+        });
+
+        it('should be defined on the service and POST to the expected URL with expected body', () => {
+            expect(sut.postWithParameters).toBeDefined();
+            $httpBackend.expectPOST(expectedUrl).respond(true);
+            $httpBackend.flush();
+        });
+
+        it('should execute the on fulfilled callback of the promise when the request is successful', () => {
+            $httpBackend.expectPOST(expectedUrl).respond(200, expectedSuccessResponse);
+            $httpBackend.flush();
+
+            expect(fulfilledCallbackSpy.calledOnce).toBe(true);
+            expect(rejectedCallbackSpy.called).toBe(false);
+
+            response = fulfilledCallbackSpy.getCall(0).args[0];
+            expect(response.status).toBeDefined();
+            expect(response.status).toBe(200);
+            expect(response.data).toBeDefined();
+            expect(response.data).toEqual(expectedSuccessResponse);
+            expect(response.data).not.toEqual(expectedErrorResponse);
+        });
+
+        it('should execute the error callback of the promise when the request is NOT successful', () => {
+            $httpBackend.expectPOST(expectedUrl).respond(400, expectedErrorResponse);
+            $httpBackend.flush();
+
+            expect(rejectedCallbackSpy.calledOnce).toBe(true);
+            expect(fulfilledCallbackSpy.called).toBe(false);
+
+            response = rejectedCallbackSpy.getCall(0).args[0];
+            expect(response.status).toBeDefined();
+            expect(response.status).toBe(400);
+            expect(response.data).toBeDefined();
+            expect(response.data).toEqual(expectedErrorResponse);
+            expect(response.data).not.toEqual(expectedSuccessResponse);
+        });
+    });
 });
