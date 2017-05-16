@@ -8,11 +8,15 @@
     export class RegisterDetailsController implements IRegisterDetailsController {
         public title: string;
         constructor() {
-            this.title = "Register Page";
+            this.activate();
         }
 
         public register(): void {
 
+        }
+
+        private activate(): void {
+            this.title = "Register Page";
         }
     }
 
