@@ -20,7 +20,7 @@
                 $scope = _$rootScope_.$new();
             });
 
-            sut = <IHomeIndexController>$controller('homeIndexController');
+            sut = $controller('homeIndexController');
             $scope.$digest();
         });
 
