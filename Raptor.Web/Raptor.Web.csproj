@@ -414,6 +414,7 @@
     <TypeScriptCompile Include="app\utils\urlHelper.service.ts" />
     <TypeScriptCompile Include="app\utils\utils.module.ts" />
     <TypeScriptCompile Include="JSTests\home\homeIndexController.spec.ts" />
+    <TypeScriptCompile Include="JSTests\register\registerDetailsController.spec.ts" />
     <TypeScriptCompile Include="JSTests\utils\dataServiceHelper.service.spec.ts" />
     <TypeScriptCompile Include="typings\angular\angular.d.ts" />
     <TypeScriptCompile Include="typings\jasmine\jasmine.d.ts" />
