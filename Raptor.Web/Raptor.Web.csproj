@@ -409,6 +409,7 @@
     <TypeScriptCompile Include="app\raptor\raptor.routes.ts" />
     <TypeScriptCompile Include="app\raptor\raptor.module.ts" />
     <TypeScriptCompile Include="app\raptor\register\register.module.ts" />
+    <TypeScriptCompile Include="app\raptor\register\register.service.ts" />
     <TypeScriptCompile Include="app\raptor\register\registerDetailsController.ts" />
     <TypeScriptCompile Include="app\utils\dataServiceHelper.service.ts" />
     <TypeScriptCompile Include="app\utils\urlHelper.service.ts" />
