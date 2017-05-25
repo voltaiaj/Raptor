@@ -8,6 +8,7 @@
         public static $inject: string[] = [''];
 
         constructor() {
+
         }
     }
 
