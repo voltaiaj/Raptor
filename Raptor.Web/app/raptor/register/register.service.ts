@@ -7,7 +7,8 @@
     export class RegisterService implements IRegisterService {
         public static $inject: string[] = [''];
 
-        constructor() { }
+        constructor() {
+        }
     }
 
     angular.module('raptor.register')
