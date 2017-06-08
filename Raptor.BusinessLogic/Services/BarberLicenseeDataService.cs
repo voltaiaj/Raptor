@@ -27,5 +27,10 @@ namespace Raptor.BusinessLogic.Services
         {
             return this.SingleOrDefault(x => x.Id == id);
         }
+
+        public IEnumerable<BarberLicensee> GetByName(string name)
+        {
+            return this.Find(x => x.FirstName == name || x.LastName == name);
+        }
     }
 }
