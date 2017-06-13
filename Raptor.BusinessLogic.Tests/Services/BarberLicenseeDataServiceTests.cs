@@ -21,6 +21,7 @@ namespace Raptor.BusinessLogic.Tests.Services
                                     {
                                         ContextPopulator.GetBarberLicensee(ctx);
                                         ContextPopulator.GetBarberLicensee(ctx);
+                                        ContextPopulator.GetBarberLicensee(ctx);
 
                                         var sut = new BarberLicenseeDataService(ctx);
 
