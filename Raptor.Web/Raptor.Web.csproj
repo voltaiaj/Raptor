@@ -290,6 +290,8 @@
     <Content Include="bower_components\angular\angular.js" />
     <Content Include="bower_components\angular\angular.min.js" />
     <Content Include="bower_components\angular\index.js" />
+    <Content Include="bower_components\d3\d3.js" />
+    <Content Include="bower_components\d3\d3.min.js" />
     <Content Include="bower_components\jasmine-core\images\jasmine-horizontal.png" />
     <Content Include="bower_components\jasmine-core\images\jasmine-horizontal.svg" />
     <Content Include="bower_components\jasmine-core\images\jasmine_favicon.png" />
@@ -367,6 +369,10 @@
     <Content Include="Scripts\d3\CHANGES.md" />
     <Content Include="Scripts\d3\LICENSE" />
     <Content Include="Scripts\d3\README.md" />
+    <Content Include="bower_components\d3\.bower.json" />
+    <Content Include="bower_components\d3\bower.json" />
+    <Content Include="bower_components\d3\LICENSE" />
+    <Content Include="bower_components\d3\README.md" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\d3\d3.js" />
     <Content Include="Scripts\d3\d3.min.js" />
@@ -410,6 +416,7 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <TypeScriptCompile Include="app\d3\d3.module.ts" />
     <TypeScriptCompile Include="app\raptor\home\home.module.ts" />
     <TypeScriptCompile Include="app\raptor\home\homeIndexController.ts" />
     <TypeScriptCompile Include="app\raptor\raptor.routes.ts" />
@@ -424,6 +431,7 @@
     <TypeScriptCompile Include="JSTests\register\registerDetailsController.spec.ts" />
     <TypeScriptCompile Include="JSTests\utils\dataServiceHelper.service.spec.ts" />
     <TypeScriptCompile Include="typings\angular\angular.d.ts" />
+    <TypeScriptCompile Include="typings\d3\d3.d.ts" />
     <TypeScriptCompile Include="typings\jasmine\jasmine.d.ts" />
     <TypeScriptCompile Include="typings\jquery\jquery.d.ts" />
     <TypeScriptCompile Include="typings\angular\angular-mocks.d.ts" />
