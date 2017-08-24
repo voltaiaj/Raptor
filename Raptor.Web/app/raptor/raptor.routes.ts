@@ -5,9 +5,9 @@
         public static $inject: string[] = ['$stateProvider', '$urlRouterProvider', '$locationProvider'];
 
         constructor($stateProvider: angular.ui.IStateProvider,
-                    $urlRouteProvider: angular.ui.IUrlRouterProvider,
+                    $urlRouterProvider: angular.ui.IUrlRouterProvider,
                     $locationProvider: angular.ILocationProvider) {
-            $urlRouteProvider.otherwise('/Home');
+            $urlRouterProvider.otherwise('/Home');
 
             $stateProvider.state('homeIndex',
                 {
