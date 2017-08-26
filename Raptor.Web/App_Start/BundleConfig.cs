@@ -16,9 +16,9 @@ namespace Raptor.Web
             );
 
             bundles.Add(new ScriptBundle("~/bundles/Raptor/js")
-                            .Include("~/app/utils/utils.module.ts")
-                            .Include("~/app/utils/dataServiceHelper.service.ts")
-                            .Include("~/app/utils/urlHelper.service.ts")
+                            .Include("~/app/utils/utils.module.js")
+                            .Include("~/app/utils/dataServiceHelper.service.js")
+                            .Include("~/app/utils/urlHelper.service.js")
                             .Include("~/app/raptor/raptor.module.js")
                             .Include("~/app/raptor/raptor.routes.js")
                             .Include("~/app/raptor/home/home.module.js")
